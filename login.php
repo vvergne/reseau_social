@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('filters/auth_filter.php');
+include('filters/guest_filter.php');
 require('config/database.php');
 require('includes/fonctions.php');
 require('includes/constants.php');
@@ -17,11 +17,11 @@ if(isset($_POST['login'])) {
 
     $q = $db->prepare("SELECT id, pseudo FROM users
             WHERE (pseudo = :identifiant OR email = :identifiant)
-            AND password = sha1(:password) AND active = '1'");
+            AND password = :password AND active = '1'");
 
     $q->execute([
       'identifiant'=> $identifiant,
-      'password'=> $password
+      'password'=> sha1($password)
     ]);
 
 

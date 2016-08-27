@@ -25,7 +25,8 @@ if ($token == $token_verif) {
 
   $q = $db-> prepare("UPDATE users SET active ='1' WHERE pseudo = ?");
   $q->execute([$peudo]);
-  redirect('login.php');
+  set_flash('Votre compte a bel et bien été activé');
+   redirect('login.php');
 
 }
 

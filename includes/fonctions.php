@@ -100,7 +100,7 @@ if(!function_exists('get_session')) {
           $q->execute([$id]);
           $data =current($q->fetchAll(PDO::FETCH_OBJ));
           $q->closeCursor();
-          
+
           return $data;
         }
       }
@@ -112,6 +112,11 @@ if(!function_exists('get_session')) {
         }
 
 
+        if(!function_exists('is_logged_in')) {
+          function is_logged_in() {
+            return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
+            }
+          }
 
 
 
