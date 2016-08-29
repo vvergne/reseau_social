@@ -14,6 +14,7 @@
         </div>
         <?php if(is_logged_in()): ?>
           <a class="navbar-brand" href="profile.php?=id'<?= get_session('user_id')?>">Page de Profil</a>
+          <a class="navbar-brand" href="share_code.php">Partager</a>
           <a class="navbar-brand" href="logout.php">Deconnexion</a>
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">

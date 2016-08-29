@@ -95,7 +95,7 @@ if(!function_exists('get_session')) {
     function find_user_by_id($id) {
           global $db;
 
-          $q = $db->prepare('SELECT  email, name, pseudo, twitter, github, sex, city, country, description FROM users
+          $q = $db->prepare('SELECT  email, name, pseudo, twitter, github, available_for_hiring, sex, city, country, description FROM users
           WHERE id = ?');
           $q->execute([$id]);
           $data =current($q->fetchAll(PDO::FETCH_OBJ));

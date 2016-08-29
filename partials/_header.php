@@ -11,6 +11,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/readable/bootstrap.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://use.fontawesome.com/69b14b9939.js"></script>
+
 
 
     <title>

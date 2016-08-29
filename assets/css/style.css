@@ -1,3 +1,6 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+
+
 body {
   margin-top: 100px;
 } ;
@@ -14,6 +17,11 @@ textarea.parsley-success {
   color: #468847;
   background-color: #DFF0D8;
   border: 1px solid #D6E9C6;
+}
+
+.jumbotron {
+
+  margin-bottom: 0;
 }
 
 input.parsley-error,
@@ -41,4 +49,30 @@ textarea.parsley-error {
 
 .parsley-errors-list.filled {
   opacity: 1;
+}
+
+
+/* SHARE CODE */
+#main-content-share-code{
+  position: relative;
+  background-color: #000;
+}
+
+#code {
+  width: 100%;
+  min-height: 400px;
+  font-family: "Source Code Pro", sans-serif;
+  border: none ;
+  outline: 0;
+  background-color: #000;
+  color: #DCDCDC;
+  resize: none;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.nav {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
