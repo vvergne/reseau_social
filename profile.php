@@ -13,7 +13,7 @@ if(!empty($_GET['id'])){
   if(!$user) {
   }
 } else {
-  redirect('profile.php?=id'.get_session('user_id'));
+  redirect('profile.php?id='.get_session('user_id'));
 }
 
 if(isset($_POST['update'])) {
@@ -42,6 +42,7 @@ if(isset($_POST['update'])) {
 
     redirect('profile.php?id='.get_session('user_id'));
     set_flash('Profil mis à jour !');
+
   }
   else {
     save_input_data();

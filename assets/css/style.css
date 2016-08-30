@@ -67,12 +67,11 @@ textarea.parsley-error {
   background-color: #000;
   color: #DCDCDC;
   resize: none;
-  overflow: hidden;
   font-size: 20px;
 }
 
 .nav {
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 10px;
 }
