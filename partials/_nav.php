@@ -1,4 +1,5 @@
-  <?php require('includes/fonctions.php') ?>
+  <?php require('includes/fonctions.php'); ?>
+  <?php require('locales/menu.php'); ?>
 
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -13,9 +14,9 @@
           <a class="navbar-brand" href="index.php">Réseau Social de <?= WEBSITE_NAME ; ?></a>
         </div>
         <?php  if(is_logged_in()): ?>
-          <a class="navbar-brand pull-right " href="profile.php?=id'<?= get_session('user_id')?>">Page de Profil</a>
-          <a class="navbar-brand pull-right" href="share_code.php">Partager</a>
-          <a class="navbar-brand pull-right" href="logout.php">Deconnexion</a>
+          <a class="navbar-brand pull-right " href="profile.php?=id'<?= get_session('user_id')?>"><?= $menu['mon_profil'][$_SESSION['locale']];?></a>
+          <a class="navbar-brand pull-right" href="share_code.php"><?= $menu['share_code'][$_SESSION['locale']];?></a>
+          <a class="navbar-brand pull-right" href="logout.php"><?= $menu['deconnexion'][$_SESSION['locale']];?></a>
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">

@@ -4,7 +4,7 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div id="main-content-share-code" >
-      <pre class="prettyprint lineums"><?php echo e($data->code); ?>
+      <pre id="code" class="prettyprint lineums"><?php echo e($data->code); ?>
       </pre>
       <div class="btn-group nav">
         <a href="share_code.php?id=<?= $_GET['id']; ?>" class="btn btn-success">Cloner</a>

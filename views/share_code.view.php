@@ -1,5 +1,7 @@
 <?php $title="Partage ton code "; ?>
 <?php include('partials/_header.php'); ?>
+<?php require('bootstrap/locale.php'); ?>
+
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
@@ -14,7 +16,7 @@
       </div>
     </div>
 
- 
+
 
 
 

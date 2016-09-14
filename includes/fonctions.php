@@ -91,6 +91,12 @@ if(!function_exists('get_session')) {
   }
 }
 
+if(!function_exists('get_current_locale')) {
+  function get_current_locale() {
+    return $_SESSION['locale'];
+  }
+}
+
 if(!function_exists('find_user_by_id')) {
   function find_user_by_id($id) {
     global $db;
