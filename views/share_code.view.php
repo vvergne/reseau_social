@@ -5,7 +5,7 @@
   <div class="jumbotron">
     <div id="main-content-share-code" >
       <form class="" action="" method="post">
-          <textarea name="code" id="code" placeholder="Tapez votre code... " required="required" ><?= $code; ?></textarea>
+          <textarea name="code" id="code" placeholder="Tapez votre code... " required="required" ><?= e($code); ?></textarea>
           <div class="btn-group nav">
             <a href="share_code.php" class="btn btn-danger">Tout effacer</a>
             <input class="btn btn-success" type="submit" name="save" value="Enregister">
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-
+ 
 
 
 

@@ -4,9 +4,9 @@ if(!function_exists('e')) {
   function e($string) {
     if($string){
       return htmlspecialchars($string);
-      }
     }
   }
+}
 
 if(!function_exists('not_empty')) {
   function not_empty($fields = []) {
@@ -77,8 +77,8 @@ if(!function_exists('clear_input_data')) {
   function clear_input_data(){
     if(isset($_SESSION['input'])){
       $_SESSION['input']= [];
+    }
   }
-}
 }
 
 if(!function_exists('get_session')) {
@@ -87,38 +87,53 @@ if(!function_exists('get_session')) {
       return !empty($_SESSION[$key])
       ? e($_SESSION[$key])
       : null;
-      }
+    }
+  }
+}
+
+if(!function_exists('find_user_by_id')) {
+  function find_user_by_id($id) {
+    global $db;
+
+    $q = $db->prepare('SELECT  email, name, pseudo, twitter, github, available_for_hiring, sex, city, country, description FROM users
+      WHERE id = ?');
+      $q->execute([$id]);
+      $data =current($q->fetchAll(PDO::FETCH_OBJ));
+      $q->closeCursor();
+
+      return $data;
     }
   }
 
-  if(!function_exists('find_user_by_id')) {
-    function find_user_by_id($id) {
-          global $db;
+  if(!function_exists('find_code_by_id')) {
+    function find_code_by_id($id) {
+      global $db;
 
-          $q = $db->prepare('SELECT  email, name, pseudo, twitter, github, available_for_hiring, sex, city, country, description FROM users
-          WHERE id = ?');
-          $q->execute([$id]);
-          $data =current($q->fetchAll(PDO::FETCH_OBJ));
-          $q->closeCursor();
+        $q= $db->prepare('SELECT code FROM codes WHERE id = ? ') ;
+        $q->execute([$id]);
+        $data =current($q->fetchAll(PDO::FETCH_OBJ));
+        $q->closeCursor();
 
-          return $data;
-        }
+        return $data;
       }
-
-      if(!function_exists('get_avatar')) {
-        function get_avatar($email) {
-            return "http://gravatar.com/avatar/".md5(strtolower(trim(e($email))));
-          }
-        }
-
-
-        if(!function_exists('is_logged_in')) {
-          function is_logged_in() {
-            return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
-            }
-          }
+    }
 
 
 
+    if(!function_exists('get_avatar')) {
+      function get_avatar($email) {
+        return "http://gravatar.com/avatar/".md5(strtolower(trim(e($email))));
+      }
+    }
 
-?>
+
+    if(!function_exists('is_logged_in')) {
+      function is_logged_in() {
+        return isset($_SESSION['user_id']) || isset($_SESSION['pseudo']);
+      }
+    }
+
+
+
+
+    ?>

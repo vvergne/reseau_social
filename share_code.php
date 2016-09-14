@@ -5,12 +5,8 @@ require('config/database.php');
 require('includes/fonctions.php');
 require('includes/constants.php');
 
-
-if(!empty($_GET['id'])) {
-  $q= $db->prepare('SELECT code FROM codes WHERE id = ? ') ;
-  $success = $q->execute([$_GET['id']]);
-
-    $data = $q->fetch(PDO::FETCH_OBJ);
+if(!empty($_GET['id'])){
+ $data = find_code_by_id($_GET['id']);
 
     if(!$data) {
 
@@ -19,8 +15,8 @@ if(!empty($_GET['id'])) {
    else {
      $code = $data->code;
    }
-  }
 
+ }
 else {
   $code = "";
 }

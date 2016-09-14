@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-md-12 well">
                   <h4>Description de <?= e($user->pseudo) ?></h4>
-                  <p>
+                  <p style="font-size:110%;">
                     <?= $user->description ? nl2br(e($user->description)) : ' Rien pour le moment'; ?>
                   </p>
                 </div>
@@ -53,6 +53,8 @@
         </div>
 
       </div>
+
+        <?php if(!empty($_GET['id']) && $_GET['id'] === get_session('user_id')) : ?>
       <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -143,7 +145,7 @@
         </div>
       </div>
     </div>
-
+  <?php endif; ?>
   </div>
 </div>
 

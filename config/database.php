@@ -5,7 +5,7 @@
   define('DB_HOST','localhost');
   define('DB_NAME','reso');
   define('DB_USERNAME','root');
-  define('DB_PASSWORD','lemotdepassephpmyAdmin');
+  define('DB_PASSWORD','');
 
 try {
 
