@@ -140,6 +140,29 @@ if(!function_exists('find_user_by_id')) {
     }
 
 
+    if(!function_exists('bcrypt_hash_password')) {
+      function bcrypt_hash_password($value , $options = array()) {
+        $cost = isset($options['rounds']) ? $options['rounds'] : 10 ;
+        $hash = password_hash($value , PASSWORD_BCRYPT, array('cost' => $cost));
+
+        if($hash == false) {
+          throw new Execption('Brcypt hashing n"est pas supporté');
+        }
+        return $hash;
+      }
+    }
+
+
+
+    if(!function_exists('bcrypt_verify_password')) {
+      function bcrypt_verify_password($value , $hashedValue) {
+      return password_verify($value , $hashedValue);
+
+
+      }
+    }
+
+
 
 
     ?>

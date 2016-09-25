@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 require('includes/fonctions.php');
 require('bootstrap/locale.php');

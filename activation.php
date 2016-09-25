@@ -17,8 +17,6 @@ $q->execute([$peudo]);
 
 $data = $q->fetch(PDO::FETCH_OBJ);
 
-var_dump($data);
-
 $token_verif = sha1($pseudo.$data->email.$data->password);
 
 if ($token == $token_verif) {
