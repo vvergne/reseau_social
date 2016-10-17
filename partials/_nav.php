@@ -16,7 +16,7 @@
         </div>
         <?php  if(is_logged_in()): ?>
           <a class="navbar-brand pull-right " href="profile.php?=id'<?= get_session('user_id')?>">Mon profil</a>
-          <a class="navbar-brand pull-right " href="edit_user.php?=id'<?= get_session('user_id')?>">editer_profil</a>
+          <a class="navbar-brand pull-right " href="edit_user.php?=id'<?= get_session('user_id')?>">Editer profil</a>
           <a class="navbar-brand pull-right" href="share_code.php">Partager code</a>
           <a class="navbar-brand pull-right" href="logout.php">deco</a>
         <?php else: ?>
