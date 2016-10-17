@@ -34,7 +34,7 @@ if(isset($_POST['login'])) {
       $_SESSION['user_id'] = $user->id;
       $_SESSION['pseudo'] = $user->pseudo;
 
-      redirect('profile.php?id='.$user->id);
+      redirect_intent_or('profile.php?id='.$user->id);
     }
 
     else {

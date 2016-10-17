@@ -8,8 +8,7 @@
     <h2>Liste des utilisateurs </h2>
 
     <?php foreach ($users as $user): ?>
-      <div class="row">
-        <div class="user-block col-md-2">
+        <div class="col-md-2 col-md-offset-1 user-block">
           <a href="profile.php?id=<?=$user->id?>">
             <img  src="<?= get_avatar($user->email) ?>" alt="image de <?= e($user->pseudo) ?>" class="img-circle" />
           </a>
@@ -17,7 +16,6 @@
               <?= e($user->pseudo) ?>
             </h4>
         </div>
-      </div>
     <?php endforeach ?>
 </div>
 

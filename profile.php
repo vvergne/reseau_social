@@ -1,9 +1,9 @@
 <?php
 session_start();
 require('filters/auth_filter.php');
+require('includes/fonctions.php');
 require('config/database.php');
 require('includes/constants.php');
-require('includes/fonctions.php');
 
 
 
