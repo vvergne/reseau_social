@@ -75,3 +75,16 @@ textarea.parsley-error {
   right: 15px;
   top: 10px;
 }
+
+/* List users */
+.user-block .avatar {
+  margin: auto;
+}
+
+.users {
+  margin-bottom: 3em;
+}
+
+.user-block {
+  text-align: center;
+}
