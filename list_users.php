@@ -10,6 +10,10 @@ $req = $db->query("SELECT id FROM users WHERE active = '1'");
 
 $nbre_total_users = $req->rowCount();
 
+if ($nbre_total_users >= 1)
+{
+
+
 $nbre_users_par_page = 12;
 
 $nbre_pages_max_gauche_et_droite = 2;
@@ -30,10 +34,9 @@ if($page_num < 1){
 
 $limit = 'LIMIT '.($page_num - 1) * $nbre_users_par_page. ',' . $nbre_users_par_page;
 
-//Cette requête sera utilisée plus tard
 $q = $db->query("SELECT pseudo,id,email FROM users WHERE active =1 ORDER BY pseudo $limit ");
 $users = $q->fetchAll(PDO::FETCH_OBJ);
-$pagination = '<nav aria-label="Page navigation">
+$pagination = '<nav class="text-center" aria-label="Page navigation">
   <ul class="pagination">';
 
 if($last_page != 1){
@@ -69,3 +72,8 @@ $pagination .= '</ul></nav>';
 
 
 require('views/list_users.view.php');
+
+} else {
+  set_flash('Aucun Utilisateur pour le moment ...');
+  redirect('index.php');
+}

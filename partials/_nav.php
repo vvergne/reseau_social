@@ -1,3 +1,4 @@
+
   <?php require('includes/fonctions.php'); ?>
   <?php require('locales/menu.php'); ?>
 
@@ -12,7 +13,7 @@
           <a class="navbar-brand pull-right " href="profile.php?=id'<?= get_session('user_id')?>">Mon profil</a>
           <a class="navbar-brand pull-right " href="edit_user.php?=id'<?= get_session('user_id')?>">Editer profil</a>
           <a class="navbar-brand pull-right" href="share_code.php">Partager code</a>
-          <a class="navbar-brand pull-right" href="logout.php">deco</a>
+          <a class="navbar-brand pull-right" href="logout.php">Deconnection</a>
         <?php else: ?>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
