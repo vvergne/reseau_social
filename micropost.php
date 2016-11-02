@@ -8,7 +8,7 @@ require('includes/fonctions.php');
 
 if(isset($_POST['publish']))
 {
-  if(!empty($_POST['content']))
+  if(!empty($_POST['content']) && $_POST['content'] >= 3 && $_POST['content'] < 140)
   {
       extract($_POST);
       $q = $db->prepare('INSERT INTO microposts(content, user_id ,created_at) VALUES(:content , :user_id, NOW() )');
@@ -16,7 +16,6 @@ if(isset($_POST['publish']))
         'content' => $content ,
         'user_id' => get_session('user_id'),
       ]) ;
-
       set_flash('Votre staut à bien été mis à jour !');
   }
 

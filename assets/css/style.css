@@ -112,6 +112,9 @@ textarea.parsley-error {
   border : 1px solid #e3e3e3;
   background-color: #fff;
   padding: 1em;
+  word-break: break-all;
+  -ms-word-break: break-all;
+  -moz-word-break: break-all;
 }
 .media-object {
   width: 70%;

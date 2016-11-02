@@ -61,7 +61,7 @@
             <form class="" action="micropost.php" method="post" data-parsley-validate>
               <div class="form-group">
                 <label for="content" class="sr-only">Statut :</label>
-                <textarea class="form-control" name="content" id="content" placeholder="Insérez votre message ici..." rows="3" required="require"></textarea>
+                <textarea class="form-control" name="content" id="content" placeholder="Insérez votre message ici..." rows="3" required="require" minlength='3' maxlength="140"></textarea>
               </div>
               <div class="form-group statut-post-submit">
                 <input class="btn btn-primary" type="submit" name="publish" value="Publier">
@@ -84,13 +84,12 @@
     </div>
   </div>
   <script src="/assets/js/jquery-3.1.1.min.js"></script>
-  <script src="/assets/js/jquery.livequery.min.js"></script>
   <script src="/assets/js/jquery.timeago.fr.js"></script>
   <script src="/assets/js/jquery.timeago.js" type="text/javascript"></script>
   <script type="text/javascript">
   window.ParsleyValidator.setLocale('fr');
   $(document).ready(function() {
-    $("time.timeago").timeago();
+    $(".timeago").timeago();
   });
 </script>
 
