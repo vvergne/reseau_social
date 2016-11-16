@@ -4,6 +4,9 @@ include('filters/guest_filter.php');
 require('config/database.php');
 require('includes/fonctions.php');
 require('includes/constants.php');
+include('includes/init.php');
+
+
 //si le formulaire a été soumis
   if(isset($_POST['register'])) {
 

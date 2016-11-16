@@ -4,6 +4,8 @@ require('filters/auth_filter.php');
 require('config/database.php');
 require('includes/constants.php');
 require('includes/fonctions.php');
+include('includes/init.php');
+
 
 if(!empty($_GET['id']) && $_GET['id'] === get_session('user_id')){
   // recupere les infos user  en bdd en utilisant l'id

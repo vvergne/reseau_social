@@ -3,6 +3,8 @@ session_start();
 require('config/database.php');
 require('includes/constants.php');
 require('includes/fonctions.php');
+include('includes/init.php');
+
 
 
 

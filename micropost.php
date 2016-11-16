@@ -4,6 +4,8 @@ session_start();
 include('filters/auth_filter.php');
 require('config/database.php');
 require('includes/fonctions.php');
+include('includes/init.php');
+
 
 
 if(isset($_POST['publish']))

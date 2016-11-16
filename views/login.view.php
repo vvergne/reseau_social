@@ -26,6 +26,12 @@
           <input type="password" class="form-control" id="password" required="true" name="password" value="">
         </div>
 
+        <!-- REMEMBER ME FIELD-->
+        <div class="form-group">
+          <label class="control-label" for="remember_me">
+          <input type="checkbox" name="remember_me"id="remember_me" value="">Garder ma session active</label>
+        </div>
+
         <input type="submit" class="btn btn-primary" name="login" value="Connexion">
 
 

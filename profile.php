@@ -4,6 +4,8 @@ require('filters/auth_filter.php');
 require('includes/fonctions.php');
 require('config/database.php');
 require('includes/constants.php');
+include('includes/init.php');
+
 
 
 
@@ -16,7 +18,7 @@ if(!empty($_GET['id'])){
   } else {
     $q = $db->prepare('SELECT content, created_at FROM microposts WHERE user_id = :user_id ORDER BY created_at DESC');
     $q->execute([
-      'user_id' => get_session('user_id'),
+      'user_id' => $_GET['id'],
     ]);
     $microposts = $q->fetchAll(PDO::FETCH_OBJ);
 

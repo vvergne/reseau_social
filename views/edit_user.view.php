@@ -31,7 +31,14 @@
           </div>
         </div>
       </div>
-
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="avatar">Changer ma photo de profil</label>
+            <input type="file" name="avatar" id="avatar" />
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
@@ -102,4 +109,31 @@
 </div>
 
 
-<?php include('partials/_footer.php'); ?>
+<!-- SCRIPT -->
+<script src="assets/js/jquery-3.1.1.min.js"></script>
+<script src="libraries/uploadify/jquery.uploadify.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="libraries/parsley/parsley.min.js"></script>
+<script src="libraries/parsley/i18n/fr.js"></script>
+<script type="text/javascript">
+  window.ParsleyValidator.setLocale('fr');
+  <?php $timestamp = time(); ?>
+  $(function() {
+      $("#avatar").uploadify({
+          'buttonText'        : 'Parcourir',
+          'fileObjName'       : 'avatar',
+          'fileTypeDesc'      : 'Image Files',
+          'fileTypeExts' : '*.gif; *.jpg; *.jpeg; *.png',
+          'formData'     : {
+  					'timestamp' : '<?php echo $timestamp;?>',
+  					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>',
+            'user_id'   : "<?php get_session('user_id') ?>"
+  				},
+          swf           : 'libraries/uploadify/uploadify.swf',
+          uploader      : 'libraries/uploadify/uploadify.php',
+          width         : 120
+      });
+  });
+</script>
+</body>
+</html>

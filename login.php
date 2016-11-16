@@ -1,10 +1,12 @@
 <?php
 session_start();
 
+include('includes/init.php');
 include('filters/guest_filter.php');
 require('config/database.php');
 require('includes/fonctions.php');
 require('includes/constants.php');
+
 
 
 //si le formulaire a été soumis
@@ -33,6 +35,13 @@ if(isset($_POST['login'])) {
 
       $_SESSION['user_id'] = $user->id;
       $_SESSION['pseudo'] = $user->pseudo;
+
+
+      // Si l'user veux rester connecté
+      if(isset($_POST['remember_me']) && $_POST['remember_me'] == 'on'){
+        setcookie('pseudo', $user->pseudo,time()+3600*24*365,null,null,false,true);
+        setcookie('user_id', $user->id,time()+3600*24*365,null,null,false,true);
+      }
 
       redirect_intent_or('profile.php?id='.$user->id);
     }
